@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFIrstAspnetTablesd.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,10 +14,22 @@ namespace MyFIrstAspnetTablesd
         {
             // Coading
 
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            //var getData = employeeDAL.GetData();
+            var getData = employeeDAL.GetData();
+
+            IdGridVIew.DataSource = getData;
+            IdGridVIew.DataBind();
+
+            //employeeDAL.SaveData();
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            var getData = TextBox1.Text;
+
             var a = 10;
 
 
